@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Number: <input type="number" id="myNumber" value="2">
+Number2: <input type="number" id="myNumber2" value="2">
+<p>Click the button to display the number of the number field.</p>
+
+
+
+<p><strong>Note:</strong> input elements with type="number" are not supported in IE 9 and earlier versions.</p>
+
+Output: <input type="number" id="demo" readonly>
+
+<script>
+let numInput = document.getElementById('myNumber');
+let numInput2 = document.getElementById('myNumber2');
+
+
+numInput.addEventListener('input', (event) => {
+let x = Number(document.getElementById("myNumber").value);
+let y = Number(document.getElementById("myNumber2").value);
+let z = x + y
+  document.getElementById("demo").value = z;
+});
+
+
+</script>
+
+</body>
+</html>

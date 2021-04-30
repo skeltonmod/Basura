@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+	<head>
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+	<!-- Compiled and minified CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="../css/skeleton.css" rel="stylesheet" type="text/css">
+        <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+	</head>
+	<style>
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+
+
+        }
+
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+
+	</style>
+
+	<body>
+
+		 <iframe id="header-iframe" scrolling="no" src="headerloan.html"></iframe>
+	<div align="center" class="search">
+
+    	
+
+		<br>
+		<form>
+			<input class="inputsearch" id="inputsearch" name="search" onkeyup="filterTable()" type="text"><br>
+
+		</form>
+
+
+	</div>
+
+				<div class="table">
+
+					<div align="center" class="somemodal">
+						<!--- MODAL BODY -->
+						<div class="modal" id="modal1">
+							<div class="modal-content">
+
+									<label>Transaction ID </label>
+									<input class="inputfield u-full-width" id="tid" placeholder="Transaction ID" readonly type="number">
+									<label>Current Day + Penalty </label>
+									<label id="penaltydate">Date goes here</label>
+									<input class="inputfield u-full-width" id="penalty" placeholder="Date and Penalty" readonly type="number">
+									<label>First Name: </label>
+									<input class="inputfield u-full-width" id="fname" placeholder="First Name" type="text"><br>
+									<label>Last Name: </label>
+									<input class="inputfield u-full-width" id="lname"  placeholder="Last Name" type="text">
+									<label>Address: </label>
+									<textarea class="inputfield u-full-width" id="address" placeholder="Address"
+											  type="text"></textarea><br><br>
+
+								<label>Term of Payment (per year) </label>
+								<select id="termofpayment" class="payment browser-default inputfield" disabled>
+									<option value=1>1</option>
+									<option value=2>2</option>
+									<option value=3>3</option>
+									<option value=4>4</option>
+									<option value=5>5</option>
+									<option value=6>6</option>
+									<option value=7>7</option>
+									<option value=8>8</option>
+									<option value=9>9</option>
+									<option value=10>10</option>
+								</select><br>
+								<label>Loan Interest (percent) </label>
+								<input class="inputfield u-full-width" id="loaninterest" placeholder="10" readonly type="number" value="10">
+								<label>Current Amount</label>
+								<input class="inputfield u-full-width" id="currentamount" placeholder="Amount" type="number" >
+								<label hidden>Total paid with Interest (with Interest)</label>
+								<input class="inputfield" id="totalpaid" hidden type="number">
+
+								<label hidden>Monthly Pay(With Interest)</label>
+								<input class="inputfield" id="monthlypaid" hidden type="number">
+								<br><br>
+								<label>Penalty</label>
+								<input class="inputfield" id="penaltypay" readonly type="number">
+								<br><br>
+								<label>Current Balance</label>
+								<input class="inputfield" id="currentbalance" readonly type="number">
+								<br><br>
+								<label>Current Balance with Penalty</label>
+								<input class="inputfield" id="currentpenalty" readonly type="number">
+								<br><br>
+								<label>Due Date</label>
+								<input class="inputfield" id="duedate" readonly type="date"><br><br>
+								<input class="modal-trigger button button-primary btnAdd" data-target="modal1" id="btnEdit" onclick="editData($('#tid').val())" type="button"  value="Add Transactions">
+							</div>
+							<div class="modal-footer">
+								<a class="modal-close waves-effect waves-green btn-flat" href="#!">Save</a>
+								<a class="modal-close waves-effect waves-red btn-flat" href="#!">Cancel</a>
+							</div>
+						</div>
+					</div>
+
+                    <table id="tableID" width="50%">
+                        
+                        <tr  id="tableRow" class="thcolor">
+                            <th>Transaction ID</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tbody id="tablebody">
+
+                        </tbody>
+                        </thead>
+
+                    </table>
+			</div>
+	</body>
+    <script type="text/javascript">
+		let globaleDue;
+		let globalBalance;
+		let globalRealPenalty;
+        $(document).ready(function () {
+            $.ajax({
+                url: "../php/view.php",
+                type: "POST",
+                cache: false,
+                success: function (response) {
+                    //alert(response);
+                    $("#tablebody").html(response);
+                }
+            });
+			$(document).ready(function(){
+				$('.modal').modal();
+				//alert("Date is "+getCurrentDate());
+				
+			});
+        });
+
+        function getRealPenalty(oldate){
+        	let penaltydate = new Date(oldate);
+        	let today = getCurrentDate();
+        	let duepenalty = getPenalty(penaltydate);
+        	
+        	let returnpenalty = (penaltydate.getMonth()+1) +"-"+penaltydate.getDate()+"-"+penaltydate.getFullYear();
+        	alert(returnpenalty);
+
+        	return returnpenalty;
+
+        }
+
+
+		function getPenalty(oldate){
+			let today = new Date();
+			let date = (today.getMonth()+1)+"-"+today.getDate()+"-"+today.getFullYear();
+			let penaltydate = new Date(oldate);
+			let penaltylabel = document.getElementById("penaltydate");
+			let penaltybox = document.getElementById("penalty");
+			let duepayment =  Number((penaltydate.getTime() - today.getTime())/31536000000).toFixed(0);
+			penaltybox.value =	duepayment;
+
+			penaltylabel.innerHTML = (penaltydate.getMonth()+1)+"-"+penaltydate.getDate()+"-"+penaltydate.getFullYear() +" and "+ date;
+
+
+
+			return duepayment;
+		}
+
+
+		function getCurrentDate(){
+			let today = new Date();
+			//let date = (today.getMonth()+1)+"-"+today.getDate()+"-"+today.getFullYear();
+			let date = today.getFullYear()+"-"+(today.getMonth()+1)+"-"+today.getDate();
+
+			return date;
+		}
+
+
+        function viewData(id, type) {
+            $.ajax({
+                url: "../php/viewdata.php",
+                method: "POST",
+				dataType:"json",
+                data: {
+                    key: "view",
+                    id: id
+                },
+                cache: false,
+                success: function (response) {
+                	globalBalance = response.currentbalance;
+                	globaleDue = getPenalty(response.dd);
+					if(type == "view"){
+						$("#tid").val(response.tid);
+						$("#fname").val(response.fname);
+						$("#lname").val(response.lname);
+						$("#address").val(response.address);
+						$("#currentamount").val(response.amount);
+						$("#termofpayment").val(response.top);
+						$("#loaninterest").val(response.loaninterest);
+						$("#totalpaid").val(response.tp);
+						$("#monthlypaid").val(response.mp);
+						$("#duedate").val(response.dd);
+						//placeholder for now
+						$("#currentbalance").val(response.currentbalance);
+						$("#penaltypay").val(response.penalty);
+						globalRealPenalty = getRealPenalty(response.dd);
+
+						alert("Global Real penalty >> "+ globalRealPenalty + " "+ globaleDue);
+						document.getElementById("penalty").value = Number(Math.abs(document.getElementById("penalty").value));
+					}
+					
+                }
+            });
+        }
+		function editData(id){
+			//alert("EDIT row "+id);
+			let tid = $("#tid");
+			let fname = $("#fname");
+			let lname = $("#lname");
+			let address = $("#address");
+			let loaninterest = $("#loaninterest");
+			let amount = $("#currentamount");
+			let termofpayment = $("#termofpayment");
+			let totalpaid = $("#totalpaid");
+			let monthlypaid = $("#monthlypaid");
+			let duedate = $("#duedate");
+			let penaltypay = $("#penaltypay");
+			let currentbalance = $("#currentbalance");
+			let paymentdate = getCurrentDate();
+			$.ajax({
+				url: "../php/edit.php",
+				method: "POST",
+				dataType: "text",
+				data:{
+					key: "edit",
+					id: id,
+					fname: fname.val(),
+					lname: lname.val(),
+					address: address.val(),
+					loaninterest: loaninterest.val(),
+					amount: amount.val(),
+					termofpayment: termofpayment.val(),
+					totalpaid: totalpaid.val(),
+					monthlypaid: monthlypaid.val(),
+					duedate: duedate.val(),
+					penaltypay: penaltypay.val(),
+					currentbalance: currentbalance.val(),
+					paymentdate: paymentdate
+				},
+				cache: false,
+				success:function (response) {
+					alert(response);
+				}
+
+			});
+		}
+
+        function deleteData(id) {
+            let inputsearch = $("#inputsearch");
+            inputsearch.val();
+            $.ajax({
+                url: "../php/delete.php",
+                type: "POST",
+                data: {
+                    key: "delete",
+                    id: id
+                },
+                cache: false,
+                success: function (response) {
+                    alert(response);
+                    $("#transaction_id_" + id).parent().remove();
+                }
+            });
+
+        }
+		
+
+        //Data Table alternative (requested by sir tan)
+        function filterTable() {
+            // ES declarations
+            let input, filter, table, tr, td, i, txtval;
+            input = document.getElementById("inputsearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tablebody");
+            tr = table.getElementsByTagName("tr");
+
+            //loop through the rows
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtval = td.textContent || td.innerText;
+                    if (txtval.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+
+		let amountevent = document.getElementById('currentamount');
+		let topevent = document.getElementById("termofpayment");
+		amountevent.addEventListener('input', (event) => {
+			let amount = Number(document.getElementById("currentamount").value);
+			let interest = Number(document.getElementById("loaninterest").value);
+			let year = Number(document.getElementById("termofpayment").value);
+			let interest1 = (Number(amount)*Number(interest)*Number(year)*globaleDue)/100;
+			let penalty =document.getElementById("penalty").value;
+			let total = amount + interest1;
+			let emi = total/(year*12);
+
+
+			document.getElementById("totalpaid").value = Math.abs(total - amount);
+			
+			if(document.getElementById("penalty").value < 0){
+				document.getElementById("penalty").value = Math.abs(penalty);
+			}
+
+
+			if(document.getElementById("duedate").value > getCurrentDate()){
+				document.getElementById("penaltypay").value = Number(0);
+			}else{
+				document.getElementById("penaltypay").value = globaleDue * total;
+
+
+			}
+			document.getElementById("currentbalance").value = globalBalance - amount  ;
+
+			document
+			
+			document.getElementById("currentpenalty").value = 
+			Number(document.getElementById("currentbalance").value) + Number(document.getElementById("penaltypay").value) - 
+			Number(document.getElementById("currentamount").value);
+			document.getElementById("monthlypaid").value = Math.abs(emi);
+		});
+
+
+
+    </script>
+	</html>

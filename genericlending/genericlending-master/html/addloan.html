@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+      <link rel="stylesheet" type="text/css" href="../css/skeleton.css">
+      <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+      <style>
+         body
+         {
+         position: fixed;
+         overflow-y: hidden;
+         width: 100%;
+         }
+      </style>
+   </head>
+   <body>
+      <table>
+         <tr>
+            <iframe id="header-iframe" src="headerloan.html" scrolling="no"></iframe>
+            </td>
+         </tr>
+      </table>
+      <form class="form-container">
+         <div class ="loan row container" align="center">
+            <div class="six columns">
+               <label>Transaction ID </label>
+               <input type="number" id="tid" class="inputfield u-full-width" readonly ><br>
+               <label>First Name: </label>
+               <input type="text" id="fname" class="inputfield u-full-width" placeholder="First Name"><br>
+               <label>Last Name: </label>
+               <input type="text" id="lname"  class="inputfield u-full-width" placeholder="Last Name">
+               <label>Address: </label>
+               <textarea class="inputfield u-full-width" id="address" placeholder="Address"
+                  type="text"></textarea><br><br>
+            </div>
+            <label>Loan Interest (percent) </label>
+            <input class="inputfield u-full-width" id="loaninterest" placeholder="10" readonly type="number" value="10">
+            <label>Initial Amount</label>
+            <input type="number" id="amount" class="inputfield u-full-width" value="Amount" >
+            <label>Term of Payment (per year) </label>
+            <select id="termofpayment" class="payment browser-default inputfield" required>
+               <option value=1>1</option>
+               <option value=2>2</option>
+               <option value=3>3</option>
+               <option value=4>4</option>
+               <option value=5>5</option>
+               <option value=6>6</option>
+               <option value=7>7</option>
+               <option value=8>8</option>
+               <option value=9>9</option>
+               <option value=10>10</option>
+            </select>
+            <br>
+            <label>Total paid with Interest (with Interest)</label>
+            <input class="inputfield" id="totalpaid" readonly type="number">
+            <label>Monthly Pay(With Interest)</label>
+            <input class="inputfield" id="monthlypaid" readonly type="number">
+            <label>Due Date</label>
+            <input type="date" id="duedate" class="inputfield date"><br><br>
+            <input type="button"  class="button button-primary btnAdd" onclick="insertData('insert')" id="btnAdd"  value="Add Transactions">
+         </div>
+      </form>
+      </div>
+   </body>
+   <script type="text/javascript">
+      $(document).ready(function () {
+          let tid = $("#tid");
+          let fname = $("#fname");
+          let lname = $("#lname");
+          let address = $("#address");
+          let loaninterest = $("#loaninterest");
+          let amount = $("#amount");
+          let termofpayment = $("#termofpayment");
+          let totalpaid = $("#totalpaid");
+          let monthlypaid = $("#monthlypaid");
+          let duedate = $("#duedate")
+          $("#btnAdd").on('click', function () {
+              tid.val("");
+              fname.val("");
+              lname.val("");
+              address.val("");
+              amount.val("");
+              termofpayment.val(1);
+              totalpaid.val("");
+              monthlypaid.val("");
+              duedate.val("");
+          });
+      fetch_data();
+      });
+      
+      function fetch_data(){
+      $.ajax({
+      url: "../php/viewdata.php",
+      method: "POST",
+      dataType: "text",
+      data:{
+      key:"getrows"
+      },
+      success: function(response) {
+      document.getElementById("tid").value = Number(Number(response) + 1);
+      }
+      });
+      }
+      function insertData(key){
+      let tid = $("#tid");
+      let fname = $("#fname");
+      let lname = $("#lname");
+      let address = $("#address");
+      let loaninterest = $("#loaninterest");
+      let amount = $("#amount");
+      let termofpayment = $("#termofpayment");
+      let totalpaid = $("#totalpaid");
+      let monthlypaid = $("#monthlypaid");
+          let duedate = $("#duedate");
+      
+      $.ajax({
+              url: '../php/addloan.php',
+      method: 'POST',
+      dataType: 'text',
+      data: {
+      key: key,
+      tid: tid.val(),
+      fname: fname.val(),
+      lname: lname.val(),
+      address: address.val(),
+      loaninterest: loaninterest.val(),
+      amount: amount.val(),
+      termofpayment: termofpayment.val(),
+      totalpaid: totalpaid.val(),
+                  monthlypaid: monthlypaid.val(),
+                  duedate: duedate.val()
+      },	cache: false
+      , success: function (response) {
+      if(response != "success"){
+      alert(response);
+      }
+      }
+      });
+      }
+      
+              let amountevent = document.getElementById('amount');
+              let topevent = document.getElementById("termofpayment");
+      
+              amountevent.addEventListener('input', (event) => {
+              let amount = Number(document.getElementById("amount").value);
+      let interest = Number(document.getElementById("loaninterest").value);
+      let year = Number(document.getElementById("termofpayment").value);
+      let interest1 = (Number(amount)*Number(interest)*Number(year))/100;
+      
+      let total = amount + interest1;
+      let emi = total/(year*12);
+      document.getElementById("totalpaid").value = total;
+      document.getElementById("monthlypaid").value = emi;
+      });
+      
+      topevent.addEventListener('change', (event) => {
+              let amount = Number(document.getElementById("amount").value);
+      let interest = Number(document.getElementById("loaninterest").value);
+      let year = Number(document.getElementById("termofpayment").value);
+      let interest1 = (Number(amount)*Number(interest)*Number(year))/100;
+      
+      let total = amount + interest1;
+      let emi = total/(year*12);
+      document.getElementById("totalpaid").value = total;
+      document.getElementById("monthlypaid").value = emi;
+      });
+      
+      
+   </script>
+</html>

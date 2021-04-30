@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9849c6fc-6a7f-45e7-9f26-002adb6baa98" name="Default Changelist" comment="Fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/jquerymobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jquerymobile.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/IP.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/IP.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/dashboard.html" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1ixD8oTRmjhTGLzlJBClmT8J8iT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../topdownshit" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\jquerymobile" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\xamppnew\htdocs\jquerymobile\css" />
+      <recent name="E:\xamppnew\htdocs\jquerymobile\js" />
+      <recent name="E:\xamppnew\htdocs\jquerymobile\css\themes" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9849c6fc-6a7f-45e7-9f26-002adb6baa98" name="Default Changelist" comment="" />
+      <created>1602840192524</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602840192524</updated>
+      <workItem from="1602840196558" duration="2292000" />
+      <workItem from="1602844832025" duration="8035000" />
+      <workItem from="1602852952814" duration="15000" />
+      <workItem from="1602852976368" duration="57000" />
+      <workItem from="1602853041667" duration="130000" />
+      <workItem from="1602853179279" duration="944000" />
+      <workItem from="1602861082149" duration="50000" />
+      <workItem from="1602897022608" duration="1641000" />
+      <workItem from="1602906811108" duration="1207000" />
+      <workItem from="1602908069827" duration="2801000" />
+      <workItem from="1602911994331" duration="259000" />
+      <workItem from="1602941806624" duration="2319000" />
+      <workItem from="1603012871928" duration="6235000" />
+      <workItem from="1603021107650" duration="3725000" />
+      <workItem from="1603081498513" duration="12173000" />
+      <workItem from="1603108621882" duration="7155000" />
+      <workItem from="1603116468705" duration="72000" />
+      <workItem from="1603166617150" duration="13318000" />
+      <workItem from="1603249827757" duration="7934000" />
+      <workItem from="1603284584540" duration="4282000" />
+      <workItem from="1603333540970" duration="976000" />
+      <workItem from="1603335369360" duration="521000" />
+      <workItem from="1603357725777" duration="6196000" />
+      <workItem from="1603434044757" duration="5725000" />
+      <workItem from="1603447556684" duration="1980000" />
+      <workItem from="1603449637099" duration="59000" />
+      <workItem from="1603711721100" duration="32000" />
+      <workItem from="1603947599963" duration="1848000" />
+      <workItem from="1604536972149" duration="8414000" />
+      <workItem from="1605347273889" duration="8000" />
+      <workItem from="1605688650579" duration="180000" />
+      <workItem from="1605688892727" duration="13000" />
+      <workItem from="1606142551808" duration="105000" />
+      <workItem from="1606223412437" duration="5000" />
+      <workItem from="1609063127233" duration="1804000" />
+      <workItem from="1609064980723" duration="266000" />
+      <workItem from="1609404115419" duration="16000" />
+      <workItem from="1610176001497" duration="4291000" />
+      <workItem from="1610278110768" duration="994000" />
+    </task>
+    <task id="LOCAL-00001" summary="Almost there!">
+      <created>1603361446394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603361446394</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Almost there!">
+      <created>1603364870629</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603364870629</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Comment on dashbaord.html">
+      <created>1603436033163</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603436033163</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Comment on dashbaord.html">
+      <created>1603438210103</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603438210103</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Comment on dashbaord.html">
+      <created>1603438305301</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603438305301</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Comment on dashbaord.html">
+      <created>1603438634205</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603438634205</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added Comment on dashbaord.html">
+      <created>1603438661985</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603438661985</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added Comment on dashbaord.html">
+      <created>1603438979869</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603438979869</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Comment on dashbaord.html">
+      <created>1603449539742</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603449539742</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added Comment on dashbaord.html">
+      <created>1603449659708</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603449659708</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixes">
+      <created>1603948720833</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603948720833</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixes">
+      <created>1603948770576</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603948770576</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fixes">
+      <created>1603948857300</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603948857300</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixes">
+      <created>1604545162391</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604545162391</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fixes">
+      <created>1604545694792</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604545694792</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixes">
+      <created>1609065000916</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1609065000916</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fixes">
+      <created>1609065116808</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609065116808</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Almost there!" />
+    <MESSAGE value="Added Comment on dashbaord.html" />
+    <MESSAGE value="Fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602842396366">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1602842396366" />
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602847043317">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1602847043317" />
+    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1609404129604">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1609404129604" />
+    <state x="448" y="226" key="Github.ShareDialog" timestamp="1603288211856">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="448" y="226" key="Github.ShareDialog/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1603288211856" />
+    <state x="489" y="88" width="600" height="591" key="Github.UntrackedFilesDialog" timestamp="1603288239063">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="489" y="88" width="600" height="591" key="Github.UntrackedFilesDialog/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1603288239063" />
+    <state x="184" y="28" key="SettingsEditor" timestamp="1602853265362">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="28" key="SettingsEditor/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1602853265362" />
+    <state x="1641" y="111" key="Vcs.Push.Dialog.v2" timestamp="1609065192394">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="116" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1604545698055" />
+    <state x="1641" y="111" key="Vcs.Push.Dialog.v2/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1609065192394" />
+    <state x="524" y="115" width="555" height="592" key="find.popup" timestamp="1603948841009">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="524" y="115" width="555" height="592" key="find.popup/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1603948841009" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1603167145743">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/1366.0.1366.738@0.0.1366.768" timestamp="1603167145743" />
+  </component>
+</project>

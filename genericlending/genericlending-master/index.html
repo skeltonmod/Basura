@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PALA UTANG</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+
+
+</head>
+
+<body>
+    <table>
+        
+        <tr>
+            <td id="header-container">
+                <iframe id="header-iframe" src="./html/header.html" scrolling="no"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td id="content-container">
+                <div><iframe id="content-iframe" name="iframe-main" scrolling="yes"></iframe></div>
+            </td>
+        </tr>
+    </table>
+
+
+    <br>
+    <br>
+   
+    <div class="links" align="center">
+
+        <button type="button"  class="waves-effect waves-light btn buttonlink" id="home" button onclick="window.location.href = '#home'">Home </button>
+
+        <button type="button" class="waves-effect waves-light btn buttonlink" id="addloan" button onclick="window.location.href = '#addloan'">Add Loan</button>
+
+
+        <button type="button"  class="waves-effect waves-light btn buttonlink" id="phistory" onclick="window.location.href = '#history'"  >History</button>
+
+
+    </div>
+
+
+</body>
+    <script>
+    function loadFrame(){
+        let pagenames  = {
+            "home" : "./html/home.html",
+            "addloan" : "./html/addloan.html",
+            "history" : "./html/transactions.html",
+        }
+         let tabname = "home";
+        if (location.hash) {
+            let id = location.hash.slice(1);
+            if (pagenames[id] != undefined) {
+                tabname = id;
+                //alert(tabname);
+            }
+        }
+        let xx = document.getElementById("header-iframe");
+        let yy = document.getElementById("header-container");
+        if(tabname != "home"){
+                xx.style.display = "none";
+                yy.style.display = "none";
+        }else{
+                xx.style.display = "block";
+                yy.style.display = "block";
+        }
+        var iframe = document.getElementById("content-iframe");
+        iframe.contentWindow.location.replace(pagenames[tabname]);
+    }
+    window.addEventListener('popstate', function(event) {
+        loadFrame();
+    });
+
+    loadFrame();
+    </script>
+
+
+</html>

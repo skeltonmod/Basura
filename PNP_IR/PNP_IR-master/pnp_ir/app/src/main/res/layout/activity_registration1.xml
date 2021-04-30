@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDFD"
+    tools:context=".Registration1Activity">
+
+    <EditText
+        android:id="@+id/editText_firstname"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="44dp"
+        android:background="#FFFDFD"
+        android:ems="10"
+        android:hint="  First Name"
+        android:inputType="textPersonName"
+        android:textColor="#0A0101"
+        android:textColorHint="#8F4B4242"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_suffix"
+        android:layout_width="96dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="64dp"
+        android:background="#FAF4F4"
+        android:ems="10"
+        android:hint="Suffix"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editText_firstname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_citizenship"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
+        android:background="#FFFEFE"
+        android:ems="10"
+        android:hint="  Citizenship"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_nickname" />
+
+    <EditText
+        android:id="@+id/editText_mobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint=" Mobile Number"
+        android:inputType="phone"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
+        android:background="#FFFEFE"
+        android:ems="10"
+        android:hint="  Email Address"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_mobileNumber" />
+
+    <EditText
+        android:id="@+id/editText_placeOfBirth"
+        android:layout_width="370dp"
+        android:layout_height="46dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="  Place of Birth"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+
+    <EditText
+        android:id="@+id/editText_highestEducAttainment"
+        android:layout_width="370dp"
+        android:layout_height="46dp"
+        android:background="#FFFEFE"
+        android:ems="10"
+        android:hint="  Highest Educational Attainment"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_placeOfBirth" />
+
+    <RadioGroup
+        android:layout_width="96dp"
+        android:layout_height="77dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_citizenship">
+
+        <RadioButton
+            android:id="@+id/radioButton_male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioButton_female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="#c6262f"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#F7F0F0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_highestEducAttainment"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <EditText
+        android:id="@+id/editText_nickname"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="  Nickname"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_middlename" />
+
+    <EditText
+        android:id="@+id/editText_middlename"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
+        android:background="#FFFEFE"
+        android:ems="10"
+        android:hint="  Middle Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_lastname" />
+
+    <EditText
+        android:id="@+id/editText_lastname"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="  Last Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_firstname" />
+
+    <TextView
+        android:id="@+id/textView_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Step 1 of 2"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_dateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Date of Birth"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_citizenship" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="214dp"
+        android:layout_height="42dp"
+        android:entries="@array/status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_dateOfBirth" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

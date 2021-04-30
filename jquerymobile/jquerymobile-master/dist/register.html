@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/pnptheme.min.3de2145e.css">
+    <link rel="stylesheet" href="/jquery.mobile.icons.min.cd00db7c.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Register</title>
+<script src="/pnptheme.min.3de2145e.js"></script><script src="/jquery.mobile.icons.min.cd00db7c.js"></script></head>
+<body>
+<div data-role="page">
+    <div data-role="header">
+        <h1>Sign-up</h1>
+    </div>
+    <div class="ui-content" role="main">
+        <form id="form">
+            <div style="text-align: center">
+                <h3>Basic Information</h3>
+            </div>
+            <div class="ui-grid-c">
+                <div class="ui-block-b"><label for="fName"></label><input id="fName" type="text" placeholder="First Name"></div>
+                <div class="ui-block-b"><label for="mName"></label><input id="mName" type="text" placeholder="Middle Name"></div>
+                <div class="ui-block-b"><label for="lName"></label><input id="lName" type="text" placeholder="Last Name"></div>
+                <div class="ui-block-b"><label for="suffix"></label><input id="suffix" type="text" placeholder="Suffix"></div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-b"><label for="email"></label><input id="email" type="email" placeholder="Email"></div>
+                <div class="ui-block-b"><label for="confirm"></label><input id="confirm" type="email" placeholder="Confirm Email"></div>
+            </div>
+            <div style="text-align: center">
+                <h3>Address</h3>
+            </div>
+            <div class="ui-grid-c">
+                <div class="ui-block-c"><label for="currentAddress"></label><input id="currentAddress" type="text" placeholder="Current Address"></div>
+                <div class="ui-block-c"><label for="currentCity"></label><input id="currentCity" type="text" placeholder="City"></div>
+                <div class="ui-block-c"><label for="currentProvince"></label><input id="currentProvince" type="text" placeholder="Province"></div>
+                <div class="ui-block-c"><label for="currentPostal"></label><input id="currentPostal" type="text" placeholder="Zip Code"></div>
+            </div>
+            <div class="ui-grid-c">
+                <div class="ui-block-c"><label for="primaryAddress"></label><input id="primaryAddress" type="text" placeholder="Primary Address"></div>
+                <div class="ui-block-c"><label for="primaryCity"></label><input id="primaryCity" type="text" placeholder="City"></div>
+                <div class="ui-block-c"><label for="primaryProvince"></label><input id="primaryProvince" type="text" placeholder="Province"></div>
+                <div class="ui-block-c"><label for="primaryPostal"></label><input id="primaryPostal" type="text" placeholder="Zip Code"></div>
+            </div>
+            <div style="text-align: center">
+                <h3>Additional Information</h3>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="birthPlace"></label><input id="birthPlace" type="text" placeholder="Birthplace"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="birthday"></label><input id="birthday" type="date" placeholder="Birthday"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="phoneNumber"></label><input id="phoneNumber" type="number" placeholder="Phone Number"></div>
+            </div>
+            <div class="ui-grid-b">
+                <div class="ui-block-b"><label for="occupation"></label><input id="occupation" type="text" placeholder="Occupation"></div>
+                <div class="ui-block-b"><label for="workAddress"></label><input id="workAddress" type="text" placeholder="Work Address"></div>
+                <div class="ui-block-b"><label for="education"></label><input id="education" type="text" placeholder="Highest Education"></div>
+            </div>
+
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="citizenship"></label><input id="citizenship" type="email" placeholder="Citizenship"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <label>
+                        <select id="civilStatus">
+                            <option value="Single">Single</option>
+                            <option value="Single">Married</option>
+                            <option value="Single">Divorced</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <label>
+                        <select id="gender">
+                            <option value="Single">Male</option>
+                            <option value="Single">Female</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div style="text-align: center">
+                <h3>ID Picture</h3>
+            </div>
+            <div style="text-align: center;">
+                <div class="ui-grid-a">
+                    <img id="image_holder" onclick="$('#image_input').click()" src="/download.38293f3b.svg" width="200" height="200" alt="placeholder">
+
+                    <p>Click on the box to take a picture!</p>
+                    <input type="file" onchange="getImage(this)" id="image_input" style="position: fixed; top: -100em">
+                </div>
+            </div>
+            <div class="ui-grid-solo"><div class="ui-block-a"><input onclick="insertData()" type="button" data-icon="plus" value="Register"></div></div>
+
+        </form>
+    </div>
+</div>
+
+    <script>function getImage(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#image_holder').attr('src', e.target.result).width(200).height(200);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+function insertData() {
+  var formData = new FormData(document.getElementById("form"));
+  formData.append("key", "insert");
+  $.ajax({
+    url: "http://localhost/PHPRest/API_LOGIN.php",
+    method: 'post',
+    dataType: 'text',
+    contentType: false,
+    processData: false,
+    data: formData,
+    success: function success(response) {}
+  });
+}</script>
+</body>
+</html>

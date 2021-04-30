@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1584416828 source:/home/gvim/Documents/bestecodenz/hackerranktriples/main.cpp
+	<iostream>
+	<vector>
+	<iterator>
+

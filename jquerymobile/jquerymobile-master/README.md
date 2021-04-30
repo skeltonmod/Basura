@@ -1,0 +1,22 @@
+ **TO DO**
+ - [x] 100% of the Core Features
+ - [x] Image upload
+ - [x] Ajax
+ - [x] Most of the Essentials and QOL
+ - [x] Delete Records
+ - [x] Incident module
+ - [x] Map module
+ - [x] Register module
+ - [ ] Cordova
+ - [x] Bug fix (Edit)
+ - ~~Dynamic IP grabber~~ (Unsupported due to security flaws)
+ - [x] Validation
+ - [x] UI Back button
+ - [x] Register button (remove Icon)
+ - [x] Update profile button (remove Icon)
+ - [x] Email Address
+ - [x] User Input password
+ - [x] New Dialog
+ - [ ] New Dialog for Incident
+ - [x] Copy Current to Present incl Placeholder
+ 

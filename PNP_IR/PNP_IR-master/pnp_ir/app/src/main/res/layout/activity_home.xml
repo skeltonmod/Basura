@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btn_EditProfile"
+        android:layout_width="166dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:background="#c6262f"
+        android:drawableBottom="@drawable/ic_edit_profile"
+        android:paddingTop="20dp"
+        android:paddingBottom="25dp"
+        android:text="Edit Profile"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_SendIncident" />
+
+    <Button
+        android:id="@+id/btn_Extras"
+        android:layout_width="166dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:background="#c6262f"
+        android:drawableBottom="@drawable/ic_other"
+        android:paddingTop="20dp"
+        android:paddingBottom="25dp"
+        android:text="Extras"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_EditProfile"
+        app:layout_constraintTop_toBottomOf="@+id/btn_IncidentStatus" />
+
+    <Button
+        android:id="@+id/btn_IncidentStatus"
+        android:layout_width="166dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="164dp"
+        android:background="#c6262f"
+        android:drawableBottom="@drawable/ic_incident_status"
+        android:paddingTop="20dp"
+        android:paddingBottom="25dp"
+        android:text="Status"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_SendIncident"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_SendIncident"
+        android:layout_width="166dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="164dp"
+        android:background="#c6262f"
+        android:drawableBottom="@drawable/ic_send_incident"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Send Incident"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_SignOut"
+        android:layout_width="166dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:background="#c6262f"
+        android:drawableBottom="@drawable/ic_logout"
+        android:paddingTop="20dp"
+        android:paddingBottom="25dp"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_EditProfile" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home" />
+
+    <TextView
+        android:id="@+id/textView_hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Hello, "
+        android:textColor="#c6262f"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
+        android:text="{placeholder}"
+        android:textColor="#0E0000" android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.011"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="Incident"
+        android:textColor="#c6262f"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_SignOut"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reporting"
+        android:textColor="#090606"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="58dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_SignOut"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Extras"
+        app:srcCompat="@drawable/pnp_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

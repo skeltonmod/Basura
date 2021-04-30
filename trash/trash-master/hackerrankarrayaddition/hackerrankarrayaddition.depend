@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1584409863 source:/home/gvim/Documents/bestecodenz/hackerrankarrayaddition/main.cpp
+	<iostream>
+	<vector>
+	<numeric>
+

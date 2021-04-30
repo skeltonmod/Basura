@@ -1,0 +1,117 @@
+/*Base*/
+body {
+    max-width: 700px;
+    width: auto;
+    margin: auto;
+    border: #bdc3c7 solid 8px;
+    padding: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 8px;
+    color: white;
+    background-color: black;
+}
+
+a{
+    text-decoration: none
+}
+
+/*Date*/
+
+.container {
+    position: relative;
+}
+.topright {
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+span {
+    color: #3498db;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+/*Header*/
+
+h2 {
+    color: #3498db;
+    text-transform: capitalize;
+}
+
+/*Block Quotes, would normally make a class, but just selecting div just for simplicity/not modifying html.*/
+.quoteblock{
+    font-size: 14px;
+    font-weight: 500;
+    border-left: #bdc3c7 solid 5px;
+    padding-left: 4px;
+}
+/*Paragraphs, actual blog posts.*/
+
+p {
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*Horizontal Rule*/
+
+hr {
+    height: 1px;
+    border: 1px inherit;
+    border-right-color: black;
+    border-left-color: black;
+}
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.small-images{
+    width: 150px;
+    height: auto;
+}
+.cat{
+    display: inline-block;
+}
+.zoom{
+    width:5%;
+    height:5%;
+}
+.zoom:hover {
+    transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.nav-entry{
+    transition: 0.3s;
+}
+
+.nav-entry:hover{
+    color: #3498db !important;
+}
+
+.index-name{
+    display:flex;
+    font-size: 12px;
+    color: white;
+    vertical-align: middle;
+    line-height: 1.5;
+    margin: 10px 10px 0 0;
+    padding: 5px 10px;
+    justify-content: center;
+}
+
+.blog_entry{
+    color: whitesmoke;
+    transition: 0.3s;
+}
+.blog_entry:hover{
+    color: #3498db !important;
+}
+
+.ql-size-small{
+    font-size: 14px; !important;
+    font-weight: 500; !important;
+}
+

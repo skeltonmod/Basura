@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Incident Reporting (PNP)</string>
+    <string name="activity_home">Home</string>
+    <string name="title_activity_registration2">Registration2Activity</string>
+
+        <string-array name="incidents">
+            <item>Crime</item>
+            <item>Vice</item>
+            <item>Arson</item>
+            <item>Accident</item>
+            <item>Homicide</item>
+            <item>Suicide</item>
+            <item>Pesticide</item>
+            <item>AMAcide</item>
+        </string-array>
+    <string-array name="status">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Baog</item>
+        <item>Malas</item>
+
+    </string-array>
+
+</resources>

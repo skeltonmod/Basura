@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDFD"
+    tools:context=".Registration1Activity">
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="68dp"
+        android:background="#c6262f"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="#F7F0F0"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_rPass"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText_cAddress"
+        android:layout_width="349dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="72dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="Current Address"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_hCity"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="Home City"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_hBarangay" />
+
+    <EditText
+        android:id="@+id/editText_cBarangay"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:background="#FFFDFD"
+        android:ems="10"
+        android:hint="Current Barangay"
+        android:inputType="textPersonName"
+        android:textColor="#0A0101"
+        android:textColorHint="#8F4B4242"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_cAddress" />
+
+    <EditText
+        android:id="@+id/editText_cCity"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="Current City"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_cBarangay" />
+
+    <EditText
+        android:id="@+id/editText_occupation"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:background="#FFFDFD"
+        android:ems="10"
+        android:hint="Occupation"
+        android:inputType="textPersonName"
+        android:textColor="#0A0101"
+        android:textColorHint="#8F4B4242"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_hCity" />
+
+    <EditText
+        android:id="@+id/editText_wAddress"
+        android:layout_width="350dp"
+        android:layout_height="36dp"
+        android:background="#FFFDFD"
+        android:ems="10"
+        android:hint="Work/School Address"
+        android:inputType="textPersonName"
+        android:textColor="#0A0101"
+        android:textColorHint="#8F4B4242"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <EditText
+        android:id="@+id/editText_Pass"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_wAddress" />
+
+    <EditText
+        android:id="@+id/editText_rPass"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:hint="Repeat Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.564"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Pass" />
+
+    <EditText
+        android:id="@+id/editText_hAddress"
+        android:layout_width="349dp"
+        android:layout_height="45dp"
+        android:background="#F8F7F7"
+        android:ems="10"
+        android:hint="Home Address"
+        android:inputType="textPersonName"
+        android:textColorHint="#868686"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_cCity" />
+
+    <EditText
+        android:id="@+id/editText_hBarangay"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:background="#FFFDFD"
+        android:ems="10"
+        android:hint="Home Barangay"
+        android:inputType="textPersonName"
+        android:textColor="#0A0101"
+        android:textColorHint="#8F4B4242"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_hAddress" />
+
+    <TextView
+        android:id="@+id/textView_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Step 2 of 2"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="152dp"
+        android:layout_height="94dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_occupation"
+        app:srcCompat="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="46dp"
+        android:text="ID presented"
+        app:layout_constraintBottom_toTopOf="@+id/editText_wAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/editText_occupation"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

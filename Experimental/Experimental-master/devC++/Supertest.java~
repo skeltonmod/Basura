@@ -1,0 +1,17 @@
+/**
+ * Auto Generated Java Class.
+ */
+public class Supertest {
+  
+  public Supertest() { 
+    /* YOUR CONSTRUCTOR CODE HERE*/
+  }
+  
+  public static void main(String[] args) { 
+      int z = 43;
+    System.out.println();
+  }
+  
+
+  
+}

@@ -1,0 +1,47 @@
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/pnptheme.min.3de2145e.css">
+  <link rel="stylesheet" href="/jquery.mobile.icons.min.cd00db7c.css">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>Login</title>
+<script src="/pnptheme.min.3de2145e.js"></script><script src="/jquery.mobile.icons.min.cd00db7c.js"></script></head>
+
+<body>
+  <div data-role="page">
+    <div data-role="header">
+      <h1>Login</h1>
+    </div>
+    <div class="ui-content" role="main">
+      <div data-role="content" id="content">
+        <figure id="topimg">
+          <div style="text-align: center;"><img src="/logo.cecc779a.png" width="200" height="100" alt="image"></div>
+        </figure>
+        <div style="text-align: center"><h3>Citizen's Reporting Tool</h3></div>
+      </div>
+      <div class="ui-grid-a ui-responsive">
+        <label for="email"></label><input type="text" name="text-basic" id="email" placeholder="Email">
+        <label for="password"></label><input type="password" name="text-basic" id="password" placeholder="Password">
+        <div class="ui-block-a"><input id="btn_login" onclick="login()" type="button" data-icon="check" value="Login"></div>
+        <div class="ui-block-b"><input onclick="register()" type="button" data-icon="plus" value="Register"></div>
+      </div>
+    </div>
+  </div>
+
+<script>function login() {
+  alert($("#email").val());
+}
+
+function register() {
+  window.location.href = 'register.html';
+}</script>
+
+</body>
+
+</html>

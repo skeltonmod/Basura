@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6d47bf2-4637-47d9-92bd-a537cee16bcd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1ga2F1vov5uG8KXCQ4wRsue8W84" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6d47bf2-4637-47d9-92bd-a537cee16bcd" name="Default Changelist" comment="" />
+      <created>1598338274860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598338274860</updated>
+      <workItem from="1598338278564" duration="1659000" />
+      <workItem from="1598376254338" duration="768000" />
+      <workItem from="1598416915179" duration="10000" />
+      <workItem from="1598930722699" duration="170000" />
+      <workItem from="1598943306833" duration="978000" />
+      <workItem from="1599040395755" duration="16000" />
+      <workItem from="1599053103351" duration="17000" />
+      <workItem from="1599053182003" duration="1531000" />
+      <workItem from="1599195083703" duration="3629000" />
+      <workItem from="1599452632499" duration="1985000" />
+      <workItem from="1599721385977" duration="39000" />
+      <workItem from="1599913629312" duration="4631000" />
+      <workItem from="1600074242340" duration="10852000" />
+      <workItem from="1600166546602" duration="1849000" />
+      <workItem from="1600169217197" duration="1160000" />
+      <workItem from="1600174708067" duration="101000" />
+      <workItem from="1600500581742" duration="6568000" />
+      <workItem from="1600515330425" duration="9930000" />
+      <workItem from="1600562193865" duration="250000" />
+      <workItem from="1600588865069" duration="669000" />
+      <workItem from="1600600320757" duration="3008000" />
+      <workItem from="1600658252484" duration="6061000" />
+      <workItem from="1600691553332" duration="139000" />
+      <workItem from="1600940733531" duration="93000" />
+      <workItem from="1601003241141" duration="23000" />
+      <workItem from="1601032614029" duration="58000" />
+      <workItem from="1601032679732" duration="2316000" />
+      <workItem from="1601266555821" duration="115000" />
+      <workItem from="1601271463859" duration="39000" />
+      <workItem from="1601282282068" duration="536000" />
+      <workItem from="1601285854928" duration="797000" />
+      <workItem from="1601344063304" duration="6000" />
+      <workItem from="1601361341738" duration="27000" />
+      <workItem from="1601388927825" duration="16000" />
+      <workItem from="1601430850469" duration="98000" />
+      <workItem from="1601548618839" duration="3657000" />
+      <workItem from="1601611510589" duration="623000" />
+      <workItem from="1601612469602" duration="45000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1641" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600081066566">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1641" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1600081066566" />
+    <state x="1854" y="84" key="#com.intellij.ide.util.MemberChooser" timestamp="1600081907520">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1854" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1600081907520" />
+    <state x="1779" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598338306483">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1779" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1598338306483" />
+    <state x="463" y="128" key="FileChooserDialogImpl" timestamp="1601612493820">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="128" key="FileChooserDialogImpl/0.0.1366.768/-1366.0.1366.738@0.0.1366.768" timestamp="1601612493820" />
+    <state x="1829" y="123" key="FileChooserDialogImpl/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1599721422659" />
+    <state x="1861" y="91" key="NewPhpClassDialog" timestamp="1599916048282">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1861" y="91" key="NewPhpClassDialog/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1599916048282" />
+    <state x="517" y="304" key="NewPhpFileDialog" timestamp="1601551884207">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="-849" y="292" key="NewPhpFileDialog/0.0.1366.768/-1366.0.1366.738@-1366.0.1366.738" timestamp="1601286087322" />
+    <state x="517" y="304" key="NewPhpFileDialog/0.0.1366.768/-1366.0.1366.738@0.0.1366.768" timestamp="1601551884207" />
+    <state x="1883" y="292" key="NewPhpFileDialog/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1601032922242" />
+    <state x="1550" y="13" key="SettingsEditor" timestamp="1598338628590">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1550" y="13" key="SettingsEditor/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1598338628590" />
+    <state x="1892" y="129" key="refactoring.ChangeSignatureDialog" timestamp="1600079702949">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1892" y="129" key="refactoring.ChangeSignatureDialog/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1600079702949" />
+    <state x="1712" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1600503695493">
+      <screen x="1366" y="0" width="1366" height="738" />
+    </state>
+    <state x="1712" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/1366.0.1366.738@1366.0.1366.738" timestamp="1600503695493" />
+  </component>
+</project>

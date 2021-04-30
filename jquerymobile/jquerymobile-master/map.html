@@ -1,0 +1,82 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="css/leaflet.css">
+    <script src="js/leaflet.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/leaflet-pip.js"></script>
+    <script src="js/leaflet.ajax.min.js"></script>
+
+    <style>
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #map_canvas {
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="map_canvas"></div>
+    <input type="text" id="data" value="">
+    <script type='text/javascript'>
+        let polyname = ""
+        $(document).ready(function () {
+            let map = L.map('map_canvas').setView([8.4542, 124.6319], 13);
+            let geojson = new L.GeoJSON.AJAX("map.geojson",{
+                onEachFeature: onEachFeature
+            })
+            geojson.addTo(map)
+
+            function onLocationError(e) {
+                alert(e.message);
+            }
+            function onEachFeature(feature,layer){
+                layer.on('click',function (event){
+                    // window.parent.getBarangay(feature.properties.NAME_3,event.latlng.lat,event.latlng.lng)
+                    console.log(event.latlng.lng+' '+event.latlng.lat)
+
+                })
+
+                layer.bindPopup(feature.properties.NAME_3)
+                //this one goes to the other page
+            }
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            map.on('locationerror', onLocationError);
+            $(window).load(function (){
+
+
+
+                navigator.geolocation.getCurrentPosition(position => {
+                    const {coords: { latitude, longitude }} = position;
+                    let marker = new L.marker([latitude, longitude], {
+                    }).addTo(map);
+
+                    console.log(marker);
+                    let result = leafletPip.pointInLayer([marker._latlng.lng, marker._latlng.lat],geojson)
+                    console.log(result[0].feature.properties.NAME_3)
+                    window.parent.getBarangay(result[0].feature.properties.NAME_3,marker._latlng.lat,marker._latlng.lng)
+                    // console.log()
+                })
+            })
+
+
+        })
+
+
+    </script>
+</body>
+</html>

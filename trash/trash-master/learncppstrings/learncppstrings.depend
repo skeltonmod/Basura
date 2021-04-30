@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1577181119 source:/home/gvim/Documents/bestecodenz/learncppstrings/main.cpp
+	<iostream>
+	<string>
+	<limits>
+

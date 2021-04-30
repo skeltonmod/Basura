@@ -1,0 +1,281 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="css/themes/pnptheme.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="js/IP.js"></script>
+    <title>Register</title>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header">
+        <h1>Sign-up</h1>
+        <a href="#" id="backbutton" data-icon="arrow-l" data-theme="a">Back</a>
+    </div>
+    <div class="ui-content" role="main">
+        <form id="form" enctype="multipart/form-data">
+            <div style="text-align: center">
+                <h3>Basic Information</h3>
+            </div>
+            <div class="ui-grid-c">
+                <div class="ui-block-b"><label for="fName"></label><input id="fName" name="firstName" type="text" placeholder="First Name"></div>
+                <div class="ui-block-b"><label for="mName"></label><input id="mName" name="middleName" type="text" placeholder="Middle Name"></div>
+                <div class="ui-block-b"><label for="lName"></label><input id="lName" name="lastName" type="text" placeholder="Last Name"></div>
+                <div class="ui-block-b"><label for="suffix"></label><input id="suffix" name="suffix" type="text" placeholder="Suffix"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="email"></label><input id="email" name="email" type="email" placeholder="Email"></div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><label for="password"></label><input id="password" type="password" name="password" placeholder="Password"></div>
+                <div class="ui-block-b"><label for="confirmPassword"></label><input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password"></div>
+            </div>
+            <div style="text-align: center">
+                <h3>Address</h3>
+            </div>
+            <div class="ui-grid-c">
+                <div class="ui-block-c"><label for="currentAddress"></label><input id="currentAddress" name="cAddress" type="text" placeholder="Current Address"></div>
+                <div class="ui-block-c"><label for="currentCity"></label><input id="currentCity" type="text" name="cCity" placeholder="City"></div>
+                <div class="ui-block-c"><label for="currentProvince"></label><input id="currentProvince" type="text" name="cProvince" placeholder="Province"></div>
+                <div class="ui-block-c"><label for="currentPostal"></label><input id="currentPostal" type="text" name="cZip" placeholder="Zip Code"></div>
+            </div>
+            <div class="ui-grid-solo"><div class="ui-block-a"><input id="duplicate" type="button" value="Use Current Address"></div></div>
+            <div class="ui-grid-c">
+                <div class="ui-block-c"><label for="primaryAddress"></label><input id="primaryAddress" name="pAddress" type="text" placeholder="Primary Address"></div>
+                <div class="ui-block-c"><label for="primaryCity"></label><input id="primaryCity" name="pCity" type="text" placeholder="City"></div>
+                <div class="ui-block-c"><label for="primaryProvince"></label><input id="primaryProvince" name="pProvince" type="text" placeholder="Province"></div>
+                <div class="ui-block-c"><label for="primaryPostal"></label><input id="primaryPostal" name="pZip" type="text" placeholder="Zip Code"></div>
+            </div>
+            <div style="text-align: center">
+                <h3>Additional Information</h3>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="birthPlace"></label><input id="birthPlace" type="text" name="birthplace" placeholder="Birthplace"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="birthday"></label><input id="birthday" name="birthday" type="date" placeholder="Birthday"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="phoneNumber"></label><input id="phoneNumber" name="mobileNumber" type="number" placeholder="Phone Number"></div>
+            </div>
+            <div class="ui-grid-b">
+                <div class="ui-block-b"><label for="occupation"></label><input id="occupation" type="text" name="occupation" placeholder="Occupation"></div>
+                <div class="ui-block-b"><label for="workAddress"></label><input id="workAddress" type="text" name="workAddress" placeholder="Work Address"></div>
+                <div class="ui-block-b"><label for="education"></label><input id="education" type="text" name="education" placeholder="Highest Education"></div>
+            </div>
+
+            <div class="ui-grid-solo">
+                <div class="ui-block-a"><label for="citizenship"></label><input id="citizenship" type="text" name="citizenship" placeholder="Citizenship"></div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <label>
+                        <select id="civilStatus" name="civilstatus" data-native-menu="false">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widow">Widow</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="ui-grid-solo">
+                <div class="ui-block-a">
+                    <label>
+                        <select id="gender" data-native-menu="false">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div style="text-align: center">
+                <h3>ID Picture</h3>
+            </div>
+            <div style="text-align: center;">
+                <div class="ui-grid-a">
+                    <img id="image_holder"  onclick="$('#image_input').click()" src="img/download.svg" width="200" height="200" alt="placeholder">
+                    <div id="errorContainer"></div>
+                    <p>Click on the box to take a picture!</p>
+                    <input type="file" onchange="getImage(this)" name="imageFile" id="image_input" style="display: none">
+                </div>
+            </div>
+            <div data-role="popup" id="p" data-position-to="window" data-overlay-theme="a" data-transition="pop"><p>User Created Successfully!</p></div>
+            <div class="ui-grid-solo"><div class="ui-block-a"><input onclick="insertData()" type="button" value="Register"></div></div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    let form = $('#form')
+        $(document).ready(function (){
+            form.validate({
+                rules:{
+                    firstName: {
+                      required: true,
+                      minlength: 2
+                    },
+                    lastName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    middleName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    email:{
+                        required: true,
+                        email: true
+                    },
+                    confirmPassword:{
+                        required: true,
+                        equalTo: "#password"
+                    },
+                    imageFile:{
+                      required: true,
+                      extension: 'jpg|jpeg|png',
+                    },
+                    cAddress:{
+                        required: true,
+                        minlength: 2
+                    },
+                    cCity:{
+                        required: true,
+                        minlength: 2
+                    },
+                    cProvince:{
+                        required: true,
+                        minlength: 2
+                    },
+                    cZip:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pAddress:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pCity:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pProvince:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pZip:{
+                        required: true,
+                        minlength: 2
+                    },
+                    birthplace:{
+                        required: true
+                    },
+                    birthday:{
+                        required: true
+                    },
+                    mobileNumber:{
+                        required: true,
+                        minlength: 11
+                    },
+                    education:{
+                        required: true,
+                    },
+                    citizenship:{
+                        required: true,
+                    }
+                }
+
+            })
+        })
+        $("#backbutton").on('click',function (){
+            window.location.replace("index.html")
+        })
+        $("#duplicate").on('click',function (){
+            $("#primaryPostal").val($("#currentPostal").val())
+            $("#primaryProvince").val($("#currentProvince").val())
+            $("#primaryCity").val($("#currentCity").val())
+            $("#primaryAddress").val($("#currentAddress").val())
+        })
+        function getImage(input){
+            if (input.files && input.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#image_holder')
+                        .attr('src', e.target.result)
+                        .width(200)
+                        .height(200);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function getB64(img){
+            let canvas = document.createElement("canvas")
+            canvas.width = 200
+            canvas.height = 200
+            let ctx = canvas.getContext("2d")
+            ctx.drawImage(img,0,0)
+            let dataUrl = canvas.toDataURL("image/png")
+            return dataUrl.replace(/^data:image\/(png|jpg);base64,/, "");
+        }
+        function insertData(){
+            let currentAddress = $("#currentAddress").val() + ", " + $("#currentCity").val()+ ", "+ $("#currentProvince").val()+ ", " + $("#currentPostal").val()
+            let primaryAddress = $("#primaryAddress").val() + ", " + $("#primaryCity").val()+ ", "+ $("#primaryProvince").val()+ ", " + $("#primaryPostal").val()
+            let formData = new FormData(document.getElementById("form"))
+            let popup = $("#p")
+            formData.append("key","insert")
+            formData.append("firstName",$("#fName").val())
+            formData.append("lastName",$("#lName").val())
+            formData.append("middleName",$("#mName").val())
+            formData.append("suffix",$("#suffix").val())
+            formData.append("email",$("#email").val())
+            formData.append("password",$("#password").val())
+            formData.append("currentAddress",currentAddress)
+            formData.append("primaryAddress",primaryAddress)
+            formData.append("birthPlace",$("#birthPlace").val())
+            formData.append("birthDate",$("#birthday").val())
+            formData.append("phoneNumber",$("#phoneNumber").val())
+            formData.append("occupation",$("#occupation").val())
+            formData.append("workAddress",$("#workAddress").val())
+            formData.append("highestEducation",$("#education").val())
+            formData.append("civilStatus",$("#civilStatus").val())
+            formData.append("citizenship",$("#citizenship").val())
+            formData.append("gender",$("#gender").val())
+            formData.append("image",$("#image_input")[0].files[0])
+
+
+            if(form.valid()){
+                $.mobile.loading("show")
+                $.ajax({
+                    url: `http://${IP}/PHPRest/API_LOGIN.php`,
+                    method: 'post',
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (response){
+                        let data = response.data[0]
+                        if(data.error === false){
+                            $.mobile.loading('hide')
+                            popup.popup("open")
+                        }else {
+                            popup.text(data.message)
+                            $.mobile.loading('hide')
+                            popup.popup("open")
+                        }
+
+                    }
+
+                })
+            }
+        }
+
+    </script>
+</body>
+</html>

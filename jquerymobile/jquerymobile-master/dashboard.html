@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/classic/themes/PNP.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css">
+    <script src="js/jquery-2.1.1.js"></script>
+    <script>
+        $(document).bind('mobileinit', function() {
+            $.fn.animationComplete = function(callback) {
+                if ($.support.cssTransitions) {
+                    let superfy= "WebKitTransitionEvent" in window ? "webkitAnimationEnd" : "animationend";
+                    return $(this).one(superfy, callback);
+                } else {
+
+                    setTimeout(callback, 0);
+                    return $(this);
+                }
+            };
+
+        })
+    </script>
+    <script src="js/jquery.mobile-1.3.2.min.js"></script>c
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/IP.js"></script>
+    <title>Dashboard</title>
+
+</head>
+<body>
+    <!--- HOME DASHBOARD --->
+    <div data-role="page" class="toshow" style="display: none" data-theme="a" id="home">
+        <div data-role="header">
+            <h3>Dashboard</h3>
+        </div>
+
+        <div data-role="content" >
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><a data-role="button" href="#addIncident" id="report" data-icon="plus">Report Incident</a></div>
+                <div class="ui-block-b"><a data-role="button" href="#incidentStatus" id="status" data-icon="info">Report Status</a></div>
+            </fieldset>
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><a data-role="button" href="#editProfile" id="edit" data-icon="info">Edit Profile</a></div>
+                <div class="ui-block-b"><input type="button" id="other" value="Other" data-icon="gear"></div>
+            </fieldset>
+            <fieldset class="ui-grid-solo">
+                <div class="ui-block-a"><input type="button" onclick="logout()" id="logout" value="Logout" data-icon="alert"></div>
+            </fieldset>
+        </div>
+
+
+    </div>
+
+    <!--- REPORT INCIDENT --->
+    <div data-role="page" data-theme="a" id="addIncident">
+        <div data-role="header">
+            <h3>Add Incident</h3>
+            <a href="#home" data-icon="arrow-l" data-theme="a">Back</a>
+        </div>
+        <div data-role="content">
+            <form id="form">
+                <fieldset data-role="controlgroup">
+                    <label for="radio-choice-1">Victim</label><input type="radio" name="radio-choice" id="radio-choice-1" value="Victim">
+                    <label for="radio-choice-2">Informant</label><input type="radio" name="radio-choice" id="radio-choice-2" value="Informant">
+                </fieldset>
+
+                <div style="text-align: center"><h3>Date and Time</h3></div>
+                <div class="ui-grid-solo">
+                    <label for="date"></label><input type="date" id="date">
+                </div>
+                <div class="ui-grid-solo">
+                    <label for="time"></label><input type="time" id="time">
+                </div>
+
+                <div style="text-align: center"><h3>Incident Location</h3></div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><label for="latitude"></label><input type="text" id="latitude" placeholder="Latitude"></div>
+                    <div class="ui-block-b"><label for="longitude"></label><input type="text" id="longitude" placeholder="Longitude"></div>
+                    <div class="ui-block-c"><label for="barangay"></label><input type="text" id="barangay" placeholder="Barangay"></div>
+
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <a href="#popupMap" id="getBarangay" data-rel="popup" data-position-to="window" data-role="button" data-icon="check">Get Barangay</a></div>
+
+                    <!--- MAPS IFRAME --->
+                    <div data-role="popup" id="popupMap" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+                        <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                        <iframe src="map.html" id="mapframe" width="480" height="320" seamless></iframe>
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <h3>Incident Image</h3>
+                </div>
+                <div style="text-align: center">
+                    <img id="image_holder" onclick="$('#image_input').click()" src="img/download.svg" width="200" height="200" alt="placeholder">
+                    <p>Click on the box to take a picture!</p>
+                    <input type="file" onchange="getImage(this,'create')" id="image_input" style="display: none">
+
+                </div>
+                <div data-role="popup" id="p" data-position-to="window" data-overlay-theme="a" data-transition="pop"><p>Incident Reported Successfully!</p></div>
+                <a href="#" onclick="sendReport()" id="sendReport" data-theme="a" data-role="button">Send Incident</a>
+            </form>
+        </div>
+    </div>
+
+    <!--- INCIDENT STATUS --->
+    <div data-role="page" data-theme="a" id="incidentStatus">
+        <div data-role="header">
+            <h3>Incident Status</h3>
+            <a href="#home" data-icon="arrow-l" data-theme="a">Back</a>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" id="listview" data-inset="true" >
+            </ul>
+        </div>
+    </div>
+
+    <!--- EDIT PROFILE --->
+    <div data-role="page" data-theme="a" id="editProfile">
+        <div data-role="header">
+            <h3>Edit Profile</h3>
+            <a href="#home" data-icon="arrow-l" data-theme="a">Back</a>
+        </div>
+        <div class="ui-content" role="main">
+            <form id="editForm" enctype="multipart/form-data">
+                <div style="text-align: center;">
+                    <div class="ui-grid-solo">
+                        <img id="edit_image_holder"  onclick="$('#edit_image_input').click()" src="img/download.svg" width="200" height="200" alt="placeholder">
+
+                        <p>Click on the box to take a picture!</p>
+                        <input type="file" onchange="getImage(this,'edit')" name="imageFile" id="edit_image_input" style="display: none">
+                    </div>
+                </div>
+                <div style="text-align: center">
+                    <h3>Basic Information</h3>
+                </div>
+                <div class="ui-grid-c">
+                    <div class="ui-block-b"><label for="fName"></label><input id="fName" name="firstName" type="text" placeholder="First Name"></div>
+                    <div class="ui-block-b"><label for="mName"></label><input id="mName" name="middleName" type="text" placeholder="Middle Name"></div>
+                    <div class="ui-block-b"><label for="lName"></label><input id="lName" name="lastName" type="text" placeholder="Last Name"></div>
+                    <div class="ui-block-b"><label for="suffix"></label><input id="suffix" name="suffix" type="text" placeholder="Suffix"></div>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a"><label for="email"></label><input id="email" name="email" type="email" placeholder="Email"></div>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a"><label for="password"></label><input id="password" type="password" name="password" placeholder="Password"></div>
+                 </div>
+                <div style="text-align: center">
+                    <h3>Address</h3>
+                </div>
+                <div class="ui-grid-c">
+                    <div class="ui-block-c"><label for="currentAddress"></label><input id="currentAddress" name="cAddress" type="text" placeholder="Current Address"></div>
+                    <div class="ui-block-c"><label for="currentCity"></label><input id="currentCity" type="text" name="cCity" placeholder="City"></div>
+                    <div class="ui-block-c"><label for="currentProvince"></label><input id="currentProvince" type="text" name="cProvince" placeholder="Province"></div>
+                    <div class="ui-block-c"><label for="currentPostal"></label><input id="currentPostal" type="text" name="cZip" placeholder="Zip Code"></div>
+                </div>
+                <div class="ui-grid-solo"><div class="ui-block-a"><input id="duplicate" type="button" value="Use Current Address"></div></div>
+                <div class="ui-grid-c">
+                    <div class="ui-block-c"><label for="primaryAddress"></label><input id="primaryAddress" name="pAddress" type="text" placeholder="Primary Address"></div>
+                    <div class="ui-block-c"><label for="primaryCity"></label><input id="primaryCity" name="pCity" type="text" placeholder="City"></div>
+                    <div class="ui-block-c"><label for="primaryProvince"></label><input id="primaryProvince" name="pProvince" type="text" placeholder="Province"></div>
+                    <div class="ui-block-c"><label for="primaryPostal"></label><input id="primaryPostal" name="pZip" type="text" placeholder="Zip Code"></div>
+                </div>
+                <div style="text-align: center">
+                    <h3>Additional Information</h3>
+                </div>
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a"><label for="phoneNumber"></label><input id="phoneNumber" name="mobileNumber" type="number" placeholder="Phone Number"></div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-b"><label for="occupation"></label><input id="occupation" type="text" name="occupation" placeholder="Occupation"></div>
+                    <div class="ui-block-b"><label for="workAddress"></label><input id="workAddress" type="text" name="workAddress" placeholder="Work Address"></div>
+                    <div class="ui-block-b"><label for="education"></label><input id="education" type="text" name="education" placeholder="Highest Education"></div>
+                </div>
+
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a"><label for="citizenship"></label><input id="citizenship" type="text" name="citizenship" placeholder="Citizenship"></div>
+                </div>
+
+                <div data-role="popup" id="editPopup" data-position-to="window" data-overlay-theme="a" data-transition="pop"><p>User Updated Successfully!</p></div>
+                <div class="ui-grid-solo"><div class="ui-block-a"><input onclick="editProfile()" type="button" value="Update Profile"></div></div>
+
+            </form>
+        </div>
+    </div>
+
+    <!---NO SESSION DIALOG --->
+    <div data-role="dialog" id="dialog" data-theme="a">
+        <div data-role="header">
+            <h2>Something went wrong!</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <div style="text-align: center">
+                <p>Please login!</p>
+                <a href="#" data-role="button" onclick="window.location.replace('index.html')" id="goback">Go Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let form = $('#editForm')
+        let incidentForm = $('#form')
+        let popupIframe = $( "#popupMap iframe" )
+        //EVENTS
+        //Comment
+        $(document).ready(function (){
+            $("div.toshow").fadeIn(500)
+        })
+        $("#duplicate").on('click',function (){
+            $("#primaryPostal").val($("#currentPostal").val())
+            $("#primaryProvince").val($("#currentProvince").val())
+            $("#primaryCity").val($("#currentCity").val())
+            $("#primaryAddress").val($("#currentAddress").val())
+        })
+        $(document).on('pagebeforeshow',function (){
+            $.ajax({
+                url: `http://${IP}/PHPRest/API_LOGIN.php`,
+                method: "post",
+                dataType:"json",
+                data:{
+                    key: "checkSession"
+                },
+                beforeSend: function (){
+
+                },
+                success: function (response){
+                    let data = response.data[0]
+                    if(data.user === null){
+                        $.mobile.changePage("#dialog")
+                    }
+                }
+            })
+        })
+        $(document).on( "pageinit", function() {
+            popupIframe
+                .attr( "width", 0 )
+                .attr( "height", 0 );
+
+            popupIframe.contents().find( "#map_canvas" )
+                .css( { "width" : 0, "height" : 0 } );
+            $( "#popupMap" ).on({
+                popupbeforeposition: function() {
+                    let size = scale( 480, 320, 0, 1 ),
+                        w = size.width,
+                        h = size.height;
+
+                    popupIframe
+                        .attr( "width", w )
+                        .attr( "height", h );
+
+                    popupIframe.contents().find( "#map_canvas" )
+                        .css( { "width": w, "height" : h } );
+                },
+                popupafterclose: function() {
+
+                    popupIframe
+                        .attr( "width", 0 )
+                        .attr( "height", 0 );
+
+                    popupIframe.contents().find( "#map_canvas" )
+                        .css( { "width": 0, "height" : 0 } );
+                },
+            });
+        });
+        $("#incidentStatus").on('pageinit',function (){
+            getIncident()
+        })
+        $("#editProfile").on('pageinit',function (){
+            form.validate({
+                rules:{
+                    firstName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    lastName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    middleName: {
+                        required: true,
+                        minlength: 2
+                    },
+                    email:{
+                        required: true,
+                        email: true
+                    },
+                    imageFile:{
+                        extension: 'jpg|jpeg|png'
+                    },
+                    password: {
+                        required: true,
+                        minlength: 2,
+                    },
+                    cAddress:{
+                        required: true,
+                        minlength: 2
+                    },
+                    cCity:{
+                        required: true,
+                        minlength: 2
+                    },
+                    cProvince:{
+                        required: true,
+                        minlength: 2
+                    },
+                    cZip:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pAddress:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pCity:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pProvince:{
+                        required: true,
+                        minlength: 2
+                    },
+                    pZip:{
+                        required: true,
+                        minlength: 2
+                    },
+                    birthplace:{
+                        required: true
+                    },
+                    birthday:{
+                        required: true
+                    },
+                    mobileNumber:{
+                        required: true,
+                        minlength: 11
+                    },
+                    education:{
+                        required: true,
+                    },
+                    citizenship:{
+                        required: true,
+                    }
+                }
+
+            })
+            getProfile()
+        })
+        $('#dialog').dialog({
+            closeBtn: 'none'
+        })
+
+        //FUNCTIONS
+        function scale( width, height, padding, border ) {
+            let scrWidth = $( window ).width() - 30,
+                scrHeight = $( window ).height() - 30,
+                ifrPadding = 2 * padding,
+                ifrBorder = 2 * border,
+                ifrWidth = width + ifrPadding + ifrBorder,
+                ifrHeight = height + ifrPadding + ifrBorder,
+                h, w;
+
+            if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+                w = ifrWidth;
+                h = ifrHeight;
+            } else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
+                w = scrWidth;
+                h = ( scrWidth / ifrWidth ) * ifrHeight;
+            } else {
+                h = scrHeight;
+                w = ( scrHeight / ifrHeight ) * ifrWidth;
+            }
+
+            return {
+                'width': w - ( ifrPadding + ifrBorder ),
+                'height': h - ( ifrPadding + ifrBorder )
+            };
+        }
+        function getImage(input,key){
+            if (input.files && input.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    $(`${key === 'edit' ? '#edit_image_holder' : '#image_holder'}`)
+                        .attr('src', e.target.result)
+                        .width(200)
+                        .height(200);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function getBarangay(NAME_3,lat,long){
+            $("#barangay").val(NAME_3)
+            $("#latitude").val(lat)
+            $("#longitude").val(long)
+        }
+        function sendReport(){
+
+            let formData = new FormData(document.getElementById("form"))
+
+            formData.append("key","insert")
+            formData.append("type",$("input[name='radio-choice']:checked").val())
+            formData.append("date",$("#date").val())
+            formData.append("time",$("#time").val())
+            formData.append("lat",$("#latitude").val())
+            formData.append("lng",$("#longitude").val())
+            formData.append("barangay",$("#barangay").val())
+            formData.append("image",$("#image_input")[0].files[0])
+            $.mobile.loading("show")
+            $.ajax({
+                url:`http://${IP}/PHPRest/API_INCIDENT.php`,
+                method: 'post',
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function (response){
+                    let data = response.data[0]
+                    if(data.error === false){
+                        $.mobile.loading('hide')
+                        $('#p').popup("open")
+                        getIncident()
+                    }
+                }
+
+            })
+        }
+        function logout(){
+            $.ajax({
+                url:`http://${IP}/PHPRest/API_LOGIN.php`,
+                method: 'post',
+                dataType: 'json',
+                data: {
+                    key: "logout"
+                },
+                success:function (response){
+                    let data = response.data[0]
+                    if(data.error === false){
+                        window.location.href = "index.html"
+                    }
+                }
+            })
+        }
+        function getIncident(){
+            $.ajax({
+                url: `http://${IP}/PHPRest/API_INCIDENT.php`,
+                method: 'post',
+                dataType: 'json',
+                data:{
+                    key: 'getIncidents'
+                },
+                success: function (response){
+                    $('#listview').empty()
+                    $.each(response,function (index){
+                        $('#listview').append(`
+                        <li><a href="#" id="${response[index].id}">
+                        <img src="http://192.168.1.11:8080/PHPRest/img/${response[index].image}" alt="incident" width="80" height="80">
+                    <h2>${response[index].date} ${response[index].type}  </h2>
+                    <p><strong>An incident has been reported near ${response[index].barangay}</strong></p>
+                    <p class="ui-li-aside"><strong>${response[index].time}</strong></p>
+                    </a></li>
+                        `).listview('refresh')
+                    })
+                }
+            })
+        }
+        function getProfile(){
+
+            $.ajax({
+                url: `http://${IP}/PHPRest/API_LOGIN.php`,
+                method: 'post',
+                dataType: 'json',
+                data:{
+                    key: 'getProfile'
+                },
+                beforeSend: function (){
+                    $.mobile.loading("show")
+                },
+                success: function (response){
+                    let data = response.data[0]
+                    $.mobile.loading("hide")
+                    let currentAddress = (data.currentaddress).split(", ")
+                    let primaryAddress = (data.homeaddress).split(", ")
+                    $("#fName").val(data.firstname)
+                    $("#lName").val(data.lastname)
+                    $("#mName").val(data.middlename)
+                    $("#suffix").val(data.suffix)
+                    $("#email").val(data.email)
+                    $("#currentAddress").val(currentAddress[0])
+                    $("#currentCity").val(currentAddress[1])
+                    $("#currentProvince").val(currentAddress[2])
+                    $("#currentPostal").val(currentAddress[3])
+                    $("#primaryAddress").val(primaryAddress[0])
+                    $("#primaryCity").val(primaryAddress[1])
+                    $("#primaryProvince").val(primaryAddress[2])
+                    $("#primaryPostal").val(primaryAddress[3])
+                    $("#phoneNumber").val(data.mobilenumber)
+                    $("#occupation").val(data.occupation)
+                    $("#workAddress").val(data.workaddress)
+                    $("#education").val(data.educ)
+                    $("#citizenship").val(data.citizenship)
+                    $("#password").val(data.password)
+                    $("#edit_image_holder").attr('src',`http://${IP}/PHPRest/img/${data.image}`)
+                }
+            })
+
+        }
+        function editProfile(){
+
+            let checkNull = () => (typeof($("#edit_image_input")[0].files[0]))
+
+            let currentAddress = $("#currentAddress").val() + ", " + $("#currentCity").val()+ ", "+ $("#currentProvince").val()+ ", " + $("#currentPostal").val()
+            let primaryAddress = $("#primaryAddress").val() + ", " + $("#primaryCity").val()+ ", "+ $("#primaryProvince").val()+ ", " + $("#primaryPostal").val()
+            let formData = new FormData(document.getElementById("editForm"))
+            formData.append("key","editProfile")
+            formData.append("firstName",$("#fName").val())
+            formData.append("lastName",$("#lName").val())
+            formData.append("middleName",$("#mName").val())
+            formData.append("suffix",$("#suffix").val())
+            formData.append("email",$("#email").val())
+            formData.append("currentAddress",currentAddress)
+            formData.append("primaryAddress",primaryAddress)
+            formData.append("phoneNumber",$("#phoneNumber").val())
+            formData.append("occupation",$("#occupation").val())
+            formData.append("workAddress",$("#workAddress").val())
+            formData.append("highestEducation",$("#education").val())
+            formData.append("citizenship",$("#citizenship").val())
+            formData.append("image",(checkNull() === 'undefined' ? null : $("#edit_image_input")[0].files[0]))
+            if(form.valid()){
+                $.mobile.loading("show")
+                $.ajax({
+                    url: `http://${IP}/PHPRest/API_LOGIN.php`,
+                    method: 'post',
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (response){
+                        let data = response.data[0]
+                        if(data.error === false){
+                            $.mobile.loading('hide')
+                            $('#editPopup').popup("open")
+                        }else {
+                            $('#editPopup').text(data.message)
+                            $.mobile.loading('hide')
+                            $('#editPopup').popup("open")
+                        }
+
+                    }
+
+                })
+            }
+        }
+    </script>
+
+</body>
+</html>
